@@ -52,7 +52,7 @@ Claims are a special case: the insurance subscriber ID can belong to a parent or
 
 The problem statement's source reference doesn't list Social Security numbers in any source, so the design doesn't depend on them. If a source does carry them, we add the number as one weighted field in Splink, not as a deciding key. In healthcare it's often missing (newborns, some immigrants, patients who decline, unidentified emergency patients), often wrong (placeholders such as 000-00-0000, typos, a parent's number on a child's record) and sometimes shared through identity theft. Splink handles this well: a missing value adds no evidence, a one-digit difference counts as partial agreement, and common placeholder values are filtered out or given little weight. An SSN match with a different name and birth date still goes to review. Because it's highly sensitive, we bring in only what's needed, possibly the last four digits, keep it in restricted columns excluded from all reports and the research extract, and agree with the privacy officer whether to tokenize it, which is safer but allows exact matches only.
 
-When a merge turns out wrong, the person is split cleanly, as shown on the previous slide. A commercial matching product can replace the matching engine later behind the same link history, without changing the data model.
+When a merge turns out wrong, the person is split cleanly, as shown in the matching steps diagram. A commercial matching product can replace the matching engine later behind the same link history, without changing the data model.
 
 ## Sample records the process produces
 
