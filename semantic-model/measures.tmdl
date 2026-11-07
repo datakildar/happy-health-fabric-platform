@@ -1,0 +1,40 @@
+/// Measures for the HappyQuality model. Results come from factMeasureSummary, so reports show exactly the
+/// frozen numbers of the selected calculation run; patient-level drill-through uses factMeasureResult.
+table factMeasureSummary
+
+	measure 'Result' =
+			VAR scoring = SELECTEDVALUE ( factMeasureSummary[scoringType] )
+			RETURN
+				SWITCH (
+					scoring,
+					"Proportion", DIVIDE ( SUM ( factMeasureSummary[numerator] ), SUM ( factMeasureSummary[denominatorOrMeasurePop] ) ),
+					"Continuous variable", SELECTEDVALUE ( factMeasureSummary[observationMedian] )
+				)
+		formatString: 0.0
+		/// One formula for every measure: the scoring type picks a rate or the stored median.
+		/// Medians are not additive, so they are read from the stored row for the selected hospital and stratum.
+
+	measure 'Denominator' = SUM ( factMeasureSummary[denominatorOrMeasurePop] )
+		formatString: #,0
+
+	measure 'Numerator' = SUM ( factMeasureSummary[numerator] )
+		formatString: #,0
+
+	measure 'Excluded' = SUM ( factMeasureSummary[exclusions] )
+		formatString: #,0
+
+	measure 'Numerator (suppressed)' =
+			VAR n = [Numerator]
+			RETURN IF ( n >= 1 && n <= 10, BLANK (), n )
+		formatString: #,0
+		/// CMS cell-size rule for anything shared outside the quality team: counts from 1 to 10 are hidden.
+
+table factMeasureResult
+
+	measure 'Patients in denominator' =
+			CALCULATE ( DISTINCTCOUNT ( factMeasureResult[sourcePatientKey] ), factMeasureResult[inDenominatorOrMeasurePop] = 1 )
+		formatString: #,0
+
+	measure 'Events in numerator' =
+			CALCULATE ( COUNTROWS ( factMeasureResult ), factMeasureResult[inNumerator] = 1 )
+		formatString: #,0

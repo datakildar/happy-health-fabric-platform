@@ -1,0 +1,11 @@
+# Local tests (reference implementation)
+pandas>=2.2
+openpyxl>=3.1
+pytest>=8
+
+# Fabric environment (notebooks); not needed for the tests
+# splink>=4,<5
+# presidio-analyzer
+# presidio-anonymizer
+# pyjwt[crypto]
+# requests

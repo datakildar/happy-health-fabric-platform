@@ -1,0 +1,3 @@
+reviewId,matchingRunId,recordA,recordB,matchProbability,fieldEvidence,assignedTo,decision,reason,decidedAt,publishedInLinkVersion
+RV-0193,MR-20260929,EPIC-10005,MEDI-88005,0.81,"Name, birth date and ZIP identical; phone different",HIM data steward,Same person - link,Same address and next of kin in both charts,2026-09-29T16:40,7
+RV-0207,MR-20261014,EPIC-10012,MEDI-88012,0.38,"Surname one letter apart; birth year one apart; ZIP different; shared phone",HIM data steward,Different people - split,Care manager reported mixed history; birth certificates differ,2026-10-14T15:05,8

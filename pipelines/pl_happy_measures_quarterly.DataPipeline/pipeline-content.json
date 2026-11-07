@@ -1,0 +1,68 @@
+{
+  "properties": {
+    "description": "Quarterly measure run: pins the latest published link version and calculates the five measures. Re-runs use an existing runId.",
+    "parameters": {
+      "runId": {
+        "type": "string"
+      },
+      "periodStart": {
+        "type": "string"
+      },
+      "periodEnd": {
+        "type": "string"
+      }
+    },
+    "activities": [
+      {
+        "name": "Calculate measures",
+        "type": "TridentNotebook",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "0.03:00:00",
+          "retry": 2,
+          "retryIntervalInSeconds": 120,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "notebookId": "<05_measure_calculation-notebook-id>",
+          "workspaceId": "<happy-engineering-workspace-id>",
+          "parameters": {
+            "PIPELINE_RUN_ID": {
+              "value": {
+                "value": "@pipeline().RunId",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "USE_SAMPLES": {
+              "value": "false",
+              "type": "bool"
+            },
+            "RUN_ID": {
+              "value": {
+                "value": "@pipeline().parameters.runId",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "PERIOD_START": {
+              "value": {
+                "value": "@pipeline().parameters.periodStart",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "PERIOD_END": {
+              "value": {
+                "value": "@pipeline().parameters.periodEnd",
+                "type": "Expression"
+              },
+              "type": "string"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

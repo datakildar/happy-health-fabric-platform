@@ -1,0 +1,41 @@
+/// Quality model roles. Business users get these through Power BI app audiences tied to Entra ID groups.
+
+role 'Quality - de-identified'
+	modelPermission: read
+	/// Totals only: patient-level tables are invisible (object-level security).
+
+	tablePermission factMeasureResult
+		metadataPermission: none
+
+	tablePermission dimPatientSource
+		metadataPermission: none
+
+role 'Quality - patient data grant'
+	modelPermission: read
+	/// Membership comes from an Entra access package that expires (time-limited, approved grant).
+
+role 'Department leaders'
+	modelPermission: read
+	/// Totals for their own hospital only.
+
+	tablePermission factMeasureResult
+		metadataPermission: none
+
+	tablePermission factMeasureSummary = factMeasureSummary[hospital] IN { "ALL" } || factMeasureSummary[hospital] IN VALUES ( userHospital[hospital] )
+
+	tablePermission userHospital = userHospital[userPrincipalName] = USERPRINCIPALNAME ()
+
+/// Patient 360 model (after day 120): a care manager sees only the patients on their panel.
+/// Written as a filter on dimPerson in DAX, so relationships can stay one-way.
+role 'Care manager'
+	modelPermission: read
+
+	tablePermission dimPerson =
+			dimPerson[personId]
+				IN CALCULATETABLE (
+					VALUES ( bridgeCareManagerPanel[personId] ),
+					bridgeCareManagerPanel[userPrincipalName] = USERPRINCIPALNAME (),
+					ISBLANK ( bridgeCareManagerPanel[validTo] )
+				)
+
+	tablePermission bridgeCareManagerPanel = bridgeCareManagerPanel[userPrincipalName] = USERPRINCIPALNAME ()

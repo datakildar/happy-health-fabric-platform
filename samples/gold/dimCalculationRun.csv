@@ -1,0 +1,3 @@
+runId,runDateTime,periodStart,periodEnd,linkVersion,mdmSettingsVersion,codeVersion,status
+R-2026Q3-01,2026-10-05T06:00,2026-07-01,2026-09-30,7,MDM-2,measures v1.4.0,Submitted (frozen)
+R-2026Q3-02,2026-10-20T06:00,2026-07-01,2026-09-30,8,MDM-3,measures v1.4.0,Draft (after split)

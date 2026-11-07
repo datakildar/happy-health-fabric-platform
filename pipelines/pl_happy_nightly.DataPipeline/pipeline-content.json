@@ -1,0 +1,270 @@
+{
+  "properties": {
+    "description": "Happy Health nightly load: sources -> bronze -> silver -> patient matching -> gold -> semantic model refresh. Measure runs (notebook 05) are started separately by the quality team or the quarterly schedule.",
+    "activities": [
+      {
+        "name": "Epic FHIR export",
+        "type": "TridentNotebook",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "0.09:00:00",
+          "retry": 2,
+          "retryIntervalInSeconds": 120,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "notebookId": "<00_epic_fhir_bulk_export-notebook-id>",
+          "workspaceId": "<happy-engineering-workspace-id>",
+          "parameters": {
+            "PIPELINE_RUN_ID": {
+              "value": {
+                "value": "@pipeline().RunId",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "USE_SAMPLES": {
+              "value": "false",
+              "type": "bool"
+            }
+          }
+        }
+      },
+      {
+        "name": "MEDITECH HL7v2 to FHIR",
+        "type": "TridentNotebook",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "0.03:00:00",
+          "retry": 2,
+          "retryIntervalInSeconds": 120,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "notebookId": "<01_meditech_hl7v2_to_fhir-notebook-id>",
+          "workspaceId": "<happy-engineering-workspace-id>",
+          "parameters": {
+            "PIPELINE_RUN_ID": {
+              "value": {
+                "value": "@pipeline().RunId",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "USE_SAMPLES": {
+              "value": "false",
+              "type": "bool"
+            }
+          }
+        }
+      },
+      {
+        "name": "Healthcare Data Solutions ingestion",
+        "type": "InvokePipeline",
+        "dependsOn": [
+          {
+            "activity": "Epic FHIR export",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          },
+          {
+            "activity": "MEDITECH HL7v2 to FHIR",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "policy": {
+          "timeout": "0.03:00:00",
+          "retry": 1
+        },
+        "typeProperties": {
+          "pipelineId": "<hds-clinical-data-foundation-pipeline-id>",
+          "workspaceId": "<happy-engineering-workspace-id>",
+          "waitOnCompletion": true
+        }
+      },
+      {
+        "name": "Bronze to silver (Happy Health tables)",
+        "type": "TridentNotebook",
+        "dependsOn": [
+          {
+            "activity": "Healthcare Data Solutions ingestion",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "policy": {
+          "timeout": "0.03:00:00",
+          "retry": 2,
+          "retryIntervalInSeconds": 120,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "notebookId": "<02_bronze_to_silver_fhir-notebook-id>",
+          "workspaceId": "<happy-engineering-workspace-id>",
+          "parameters": {
+            "PIPELINE_RUN_ID": {
+              "value": {
+                "value": "@pipeline().RunId",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "USE_SAMPLES": {
+              "value": "false",
+              "type": "bool"
+            }
+          }
+        }
+      },
+      {
+        "name": "Patient matching",
+        "type": "TridentNotebook",
+        "dependsOn": [
+          {
+            "activity": "Bronze to silver (Happy Health tables)",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "policy": {
+          "timeout": "0.03:00:00",
+          "retry": 2,
+          "retryIntervalInSeconds": 120,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "notebookId": "<03_patient_matching_splink-notebook-id>",
+          "workspaceId": "<happy-engineering-workspace-id>",
+          "parameters": {
+            "PIPELINE_RUN_ID": {
+              "value": {
+                "value": "@pipeline().RunId",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "USE_SAMPLES": {
+              "value": "false",
+              "type": "bool"
+            },
+            "MATCHING_RUN_ID": {
+              "value": {
+                "value": "@concat('MR-', formatDateTime(utcnow(), 'yyyyMMdd'))",
+                "type": "Expression"
+              },
+              "type": "string"
+            }
+          }
+        }
+      },
+      {
+        "name": "Silver to gold",
+        "type": "TridentNotebook",
+        "dependsOn": [
+          {
+            "activity": "Patient matching",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "policy": {
+          "timeout": "0.03:00:00",
+          "retry": 2,
+          "retryIntervalInSeconds": 120,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "notebookId": "<04_silver_to_gold_star_schema-notebook-id>",
+          "workspaceId": "<happy-engineering-workspace-id>",
+          "parameters": {
+            "PIPELINE_RUN_ID": {
+              "value": {
+                "value": "@pipeline().RunId",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "USE_SAMPLES": {
+              "value": "false",
+              "type": "bool"
+            }
+          }
+        }
+      },
+      {
+        "name": "Refresh semantic models",
+        "type": "PBISemanticModelRefresh",
+        "dependsOn": [
+          {
+            "activity": "Silver to gold",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "policy": {
+          "timeout": "0.01:00:00",
+          "retry": 1
+        },
+        "typeProperties": {
+          "method": "post",
+          "groupId": "<happy-quality-workspace-id>",
+          "datasetId": "<quality-semantic-model-id>",
+          "commitMode": "Transactional",
+          "waitOnCompletion": true
+        }
+      },
+      {
+        "name": "Alert on failure",
+        "type": "Teams",
+        "dependsOn": [
+          {
+            "activity": "Epic FHIR export",
+            "dependencyConditions": [
+              "Failed"
+            ]
+          },
+          {
+            "activity": "MEDITECH HL7v2 to FHIR",
+            "dependencyConditions": [
+              "Failed"
+            ]
+          },
+          {
+            "activity": "Patient matching",
+            "dependencyConditions": [
+              "Failed"
+            ]
+          },
+          {
+            "activity": "Silver to gold",
+            "dependencyConditions": [
+              "Failed"
+            ]
+          }
+        ],
+        "typeProperties": {
+          "_note": "Office 365 Outlook / Teams activity posting to the data on-call channel",
+          "message": "@concat('Happy Health nightly load failed: run ', pipeline().RunId)"
+        }
+      }
+    ],
+    "concurrency": 1,
+    "parameters": {},
+    "annotations": [
+      "happy",
+      "nightly"
+    ]
+  }
+}

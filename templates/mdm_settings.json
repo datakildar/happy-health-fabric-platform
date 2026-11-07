@@ -1,0 +1,26 @@
+{
+  "_comment": "Matching settings as approved in the MDM source (Profisee). Each change is a new version, approved by the data governance lead; calculation runs record the version they used.",
+  "version": "MDM-3",
+  "approvedBy": "Data governance lead",
+  "approvedAt": "2026-10-14T12:00:00",
+  "thresholds": {
+    "autoLink": 0.95,
+    "reviewFrom": 0.50,
+    "_note": "At or above autoLink: linked automatically. Between reviewFrom and autoLink: steward review queue. Below reviewFrom: kept separate."
+  },
+  "blocking": [["birthDate"], ["lastName", "zip"]],
+  "comparisons": {
+    "firstName": {"method": "name", "termFrequencyAdjustments": true},
+    "lastName": {"method": "name", "termFrequencyAdjustments": true},
+    "birthDate": {"method": "dateOfBirth", "differentYearCountsAgainst": true},
+    "sex": {"method": "exact"},
+    "zip": {"method": "exact"},
+    "phone": {"method": "exact", "weightCap": 2.0, "_note": "MDM-3: a shared phone weighs less (family members share phones)"},
+    "ssn": {"method": "exact", "enabled": false, "_note": "Only if a source supplies it, as one weighted field, never a deciding key; tokenized"}
+  },
+  "history": [
+    {"version": "MDM-1", "from": "2026-05-01", "change": "Starting weights; auto-link 0.95, review from 0.50"},
+    {"version": "MDM-2", "from": "2026-08-03", "change": "Field weights retrained on Happy Health data"},
+    {"version": "MDM-3", "from": "2026-10-14", "change": "Shared phone capped; different birth year counts against a match (after the MEDI-88012 wrong merge)"}
+  ]
+}

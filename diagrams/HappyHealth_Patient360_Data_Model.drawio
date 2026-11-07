@@ -1,0 +1,705 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" type="device">
+  <diagram id="p360" name="Patient 360">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1990" pageHeight="1263" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Happy Health – patient 360 for the ACO (gold mart, population health)" style="text;html=0;fontSize=22;fontStyle=1;fontColor=#0B3C5D;align=left;verticalAlign=middle;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="40" y="18" width="1400" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cond" value="factCondition" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=0;whiteSpace=wrap;fillColor=#0050EF;fontColor=#FFFFFF;strokeColor=#3F8FD2;swimlaneFillColor=#FFFFFF;fontSize=13;rounded=1;arcSize=4;" parent="1" vertex="1">
+          <mxGeometry x="375" y="80" width="330" height="188" as="geometry" />
+        </mxCell>
+        <mxCell id="cond_f0" value="1 row per person × condition group" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;fontStyle=2;fontColor=#0050EF;" parent="cond" vertex="1">
+          <mxGeometry x="0" y="30" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="cond_f1" value="PK conditionKey" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;fontStyle=1;" parent="cond" vertex="1">
+          <mxGeometry x="0" y="49" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="cond_f2" value="FK personId" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="cond" vertex="1">
+          <mxGeometry x="0" y="68" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="cond_f3" value="FK conditionGroupKey" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="cond" vertex="1">
+          <mxGeometry x="0" y="87" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="cond_f4" value="firstSeenDate, lastSeenDate" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="cond" vertex="1">
+          <mxGeometry x="0" y="106" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="cond_f5" value="evidenceSource (EHR / claims / both)" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="cond" vertex="1">
+          <mxGeometry x="0" y="125" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="cond_f6" value="isSensitive" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="cond" vertex="1">
+          <mxGeometry x="0" y="144" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="cond_f7" value="linkVersion" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="cond" vertex="1">
+          <mxGeometry x="0" y="163" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="cg" value="dimConditionGroup" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=0;whiteSpace=wrap;fillColor=#BEDCF5;fontColor=#0B3C5D;strokeColor=#3F8FD2;swimlaneFillColor=#FFFFFF;fontSize=13;rounded=1;arcSize=4;" parent="1" vertex="1">
+          <mxGeometry x="40" y="90" width="290" height="131" as="geometry" />
+        </mxCell>
+        <mxCell id="cg_f0" value="PK conditionGroupKey" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;fontStyle=1;" parent="cg" vertex="1">
+          <mxGeometry x="0" y="30" width="290" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="cg_f1" value="conditionGroup (diabetes, heart failure…)" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="cg" vertex="1">
+          <mxGeometry x="0" y="49" width="290" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="cg_f2" value="hccCategory (CMS-HCC)" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="cg" vertex="1">
+          <mxGeometry x="0" y="68" width="290" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="cg_f3" value="codeListVersion" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="cg" vertex="1">
+          <mxGeometry x="0" y="87" width="290" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="cg_f4" value="isSensitive (behavioral, SUD, HIV)" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="cg" vertex="1">
+          <mxGeometry x="0" y="106" width="290" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="ind" value="factClinicalIndicator" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=0;whiteSpace=wrap;fillColor=#0050EF;fontColor=#FFFFFF;strokeColor=#3F8FD2;swimlaneFillColor=#FFFFFF;fontSize=13;rounded=1;arcSize=4;" parent="1" vertex="1">
+          <mxGeometry x="375" y="294" width="330" height="188" as="geometry" />
+        </mxCell>
+        <mxCell id="ind_f0" value="1 row per person × indicator" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;fontStyle=2;fontColor=#0050EF;" parent="ind" vertex="1">
+          <mxGeometry x="0" y="30" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="ind_f1" value="FK personId" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="ind" vertex="1">
+          <mxGeometry x="0" y="49" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="ind_f2" value="FK indicatorKey" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="ind" vertex="1">
+          <mxGeometry x="0" y="68" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="ind_f3" value="latestValue, latestDateTime" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="ind" vertex="1">
+          <mxGeometry x="0" y="87" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="ind_f4" value="previousValue, previousDateTime" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="ind" vertex="1">
+          <mxGeometry x="0" y="106" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="ind_f5" value="inTargetRange" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="ind" vertex="1">
+          <mxGeometry x="0" y="125" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="ind_f6" value="sourceSystem" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="ind" vertex="1">
+          <mxGeometry x="0" y="144" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="ind_f7" value="linkVersion" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="ind" vertex="1">
+          <mxGeometry x="0" y="163" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="di" value="dimIndicator" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=0;whiteSpace=wrap;fillColor=#BEDCF5;fontColor=#0B3C5D;strokeColor=#3F8FD2;swimlaneFillColor=#FFFFFF;fontSize=13;rounded=1;arcSize=4;" parent="1" vertex="1">
+          <mxGeometry x="40" y="304" width="290" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="di_f0" value="PK indicatorKey" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;fontStyle=1;" parent="di" vertex="1">
+          <mxGeometry x="0" y="30" width="290" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="di_f1" value="indicator (HbA1c, BP, eGFR, BMI, LDL)" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="di" vertex="1">
+          <mxGeometry x="0" y="49" width="290" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="di_f2" value="loincCodes, unit" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="di" vertex="1">
+          <mxGeometry x="0" y="68" width="290" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="di_f3" value="targetRange" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="di" vertex="1">
+          <mxGeometry x="0" y="87" width="290" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="risk" value="factRiskScore" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=0;whiteSpace=wrap;fillColor=#0050EF;fontColor=#FFFFFF;strokeColor=#3F8FD2;swimlaneFillColor=#FFFFFF;fontSize=13;rounded=1;arcSize=4;" parent="1" vertex="1">
+          <mxGeometry x="375" y="508" width="330" height="188" as="geometry" />
+        </mxCell>
+        <mxCell id="risk_f0" value="1 row per person × model × scoring run" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;fontStyle=2;fontColor=#0050EF;" parent="risk" vertex="1">
+          <mxGeometry x="0" y="30" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="risk_f1" value="PK riskScoreKey" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;fontStyle=1;" parent="risk" vertex="1">
+          <mxGeometry x="0" y="49" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="risk_f2" value="FK personId" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="risk" vertex="1">
+          <mxGeometry x="0" y="68" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="risk_f3" value="FK riskModelKey" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="risk" vertex="1">
+          <mxGeometry x="0" y="87" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="risk_f4" value="scoreRunId, scoredAt" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="risk" vertex="1">
+          <mxGeometry x="0" y="106" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="risk_f5" value="score, riskTier (1–4)" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="risk" vertex="1">
+          <mxGeometry x="0" y="125" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="risk_f6" value="topDrivers" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="risk" vertex="1">
+          <mxGeometry x="0" y="144" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="risk_f7" value="linkVersion" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="risk" vertex="1">
+          <mxGeometry x="0" y="163" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="rm" value="dimRiskModel" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=0;whiteSpace=wrap;fillColor=#BEDCF5;fontColor=#0B3C5D;strokeColor=#3F8FD2;swimlaneFillColor=#FFFFFF;fontSize=13;rounded=1;arcSize=4;" parent="1" vertex="1">
+          <mxGeometry x="40" y="518" width="290" height="131" as="geometry" />
+        </mxCell>
+        <mxCell id="rm_f0" value="PK riskModelKey" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;fontStyle=1;" parent="rm" vertex="1">
+          <mxGeometry x="0" y="30" width="290" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="rm_f1" value="model (HCC risk score, LACE" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="rm" vertex="1">
+          <mxGeometry x="0" y="49" width="290" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="rm_f2" value="  readmission, rising risk)" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="rm" vertex="1">
+          <mxGeometry x="0" y="68" width="290" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="rm_f3" value="modelVersion" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="rm" vertex="1">
+          <mxGeometry x="0" y="87" width="290" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="rm_f4" value="tierRulesVersion (MDM settings)" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="rm" vertex="1">
+          <mxGeometry x="0" y="106" width="290" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="gap" value="factCareGap" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=0;whiteSpace=wrap;fillColor=#0050EF;fontColor=#FFFFFF;strokeColor=#3F8FD2;swimlaneFillColor=#FFFFFF;fontSize=13;rounded=1;arcSize=4;" parent="1" vertex="1">
+          <mxGeometry x="375" y="722" width="330" height="207" as="geometry" />
+        </mxCell>
+        <mxCell id="gap_f0" value="1 row per person × gap × performance year" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;fontStyle=2;fontColor=#0050EF;" parent="gap" vertex="1">
+          <mxGeometry x="0" y="30" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="gap_f1" value="PK careGapKey" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;fontStyle=1;" parent="gap" vertex="1">
+          <mxGeometry x="0" y="49" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="gap_f2" value="FK personId" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="gap" vertex="1">
+          <mxGeometry x="0" y="68" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="gap_f3" value="FK careGapMeasureKey" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="gap" vertex="1">
+          <mxGeometry x="0" y="87" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="gap_f4" value="performanceYear" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="gap" vertex="1">
+          <mxGeometry x="0" y="106" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="gap_f5" value="status (open / closed / excluded)" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="gap" vertex="1">
+          <mxGeometry x="0" y="125" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="gap_f6" value="dueDate, closedDate" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="gap" vertex="1">
+          <mxGeometry x="0" y="144" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="gap_f7" value="closingEventKey" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="gap" vertex="1">
+          <mxGeometry x="0" y="163" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="gap_f8" value="linkVersion" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="gap" vertex="1">
+          <mxGeometry x="0" y="182" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="gm" value="dimCareGapMeasure" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=0;whiteSpace=wrap;fillColor=#BEDCF5;fontColor=#0B3C5D;strokeColor=#3F8FD2;swimlaneFillColor=#FFFFFF;fontSize=13;rounded=1;arcSize=4;" parent="1" vertex="1">
+          <mxGeometry x="40" y="732" width="290" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="gm_f0" value="PK careGapMeasureKey" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;fontStyle=1;" parent="gm" vertex="1">
+          <mxGeometry x="0" y="30" width="290" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="gm_f1" value="gapName (e.g. diabetic eye exam)" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="gm" vertex="1">
+          <mxGeometry x="0" y="49" width="290" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="gm_f2" value="program, specVersion" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="gm" vertex="1">
+          <mxGeometry x="0" y="68" width="290" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="gm_f3" value="lookbackMonths" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="gm" vertex="1">
+          <mxGeometry x="0" y="87" width="290" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="attr" value="factAttribution" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=0;whiteSpace=wrap;fillColor=#0050EF;fontColor=#FFFFFF;strokeColor=#3F8FD2;swimlaneFillColor=#FFFFFF;fontSize=13;rounded=1;arcSize=4;" parent="1" vertex="1">
+          <mxGeometry x="375" y="955" width="330" height="188" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_f0" value="1 row per person × program × period" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;fontStyle=2;fontColor=#0050EF;" parent="attr" vertex="1">
+          <mxGeometry x="0" y="30" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_f1" value="FK personId" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="attr" vertex="1">
+          <mxGeometry x="0" y="49" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_f2" value="FK programKey" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="attr" vertex="1">
+          <mxGeometry x="0" y="68" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_f3" value="periodStart, periodEnd" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="attr" vertex="1">
+          <mxGeometry x="0" y="87" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_f4" value="attributionStatus" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="attr" vertex="1">
+          <mxGeometry x="0" y="106" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_f5" value="FK attributedPcpKey (dimPractitioner)" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="attr" vertex="1">
+          <mxGeometry x="0" y="125" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_f6" value="sourceFile (CMS assignment list)" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="attr" vertex="1">
+          <mxGeometry x="0" y="144" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_f7" value="linkVersion" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="attr" vertex="1">
+          <mxGeometry x="0" y="163" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="ap" value="dimAcoProgram" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=0;whiteSpace=wrap;fillColor=#BEDCF5;fontColor=#0B3C5D;strokeColor=#3F8FD2;swimlaneFillColor=#FFFFFF;fontSize=13;rounded=1;arcSize=4;" parent="1" vertex="1">
+          <mxGeometry x="40" y="965" width="290" height="131" as="geometry" />
+        </mxCell>
+        <mxCell id="ap_f0" value="PK programKey" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;fontStyle=1;" parent="ap" vertex="1">
+          <mxGeometry x="0" y="30" width="290" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="ap_f1" value="program (Medicare Shared Savings," style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="ap" vertex="1">
+          <mxGeometry x="0" y="49" width="290" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="ap_f2" value="  commercial ACO contracts)" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="ap" vertex="1">
+          <mxGeometry x="0" y="68" width="290" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="ap_f3" value="performanceYear" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="ap" vertex="1">
+          <mxGeometry x="0" y="87" width="290" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="ap_f4" value="attributionSource" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="ap" vertex="1">
+          <mxGeometry x="0" y="106" width="290" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="sum" value="personSummary" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=0;whiteSpace=wrap;fillColor=#0B3C5D;fontColor=#FFFFFF;strokeColor=#3F8FD2;swimlaneFillColor=#FFFFFF;fontSize=13;rounded=1;arcSize=4;" parent="1" vertex="1">
+          <mxGeometry x="790" y="80" width="330" height="321" as="geometry" />
+        </mxCell>
+        <mxCell id="sum_f0" value="1 row per attributed person, rebuilt nightly" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;fontStyle=2;fontColor=#0050EF;" parent="sum" vertex="1">
+          <mxGeometry x="0" y="30" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="sum_f1" value="PK personId" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;fontStyle=1;" parent="sum" vertex="1">
+          <mxGeometry x="0" y="49" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="sum_f2" value="linkVersion, refreshedAt" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="sum" vertex="1">
+          <mxGeometry x="0" y="68" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="sum_f3" value="name, birthDate, sex, language" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="sum" vertex="1">
+          <mxGeometry x="0" y="87" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="sum_f4" value="phone, address (best current)" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="sum" vertex="1">
+          <mxGeometry x="0" y="106" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="sum_f5" value="program, attributedPcp, careManager" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="sum" vertex="1">
+          <mxGeometry x="0" y="125" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="sum_f6" value="riskTier, hccRiskScore, readmissionRisk" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="sum" vertex="1">
+          <mxGeometry x="0" y="144" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="sum_f7" value="chronicConditions, openCareGaps" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="sum" vertex="1">
+          <mxGeometry x="0" y="163" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="sum_f8" value="edVisits12m, admissions12m" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="sum" vertex="1">
+          <mxGeometry x="0" y="182" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="sum_f9" value="readmissions12m, outsideVisitShare12m" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="sum" vertex="1">
+          <mxGeometry x="0" y="201" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="sum_f10" value="totalPaid12m (claims)" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="sum" vertex="1">
+          <mxGeometry x="0" y="220" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="sum_f11" value="lastEncounter, lastDischarge" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="sum" vertex="1">
+          <mxGeometry x="0" y="239" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="sum_f12" value="nextAppointment" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="sum" vertex="1">
+          <mxGeometry x="0" y="258" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="sum_f13" value="lastOutreach, outreachStatus" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="sum" vertex="1">
+          <mxGeometry x="0" y="277" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="sum_f14" value="hasSensitiveData" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="sum" vertex="1">
+          <mxGeometry x="0" y="296" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="per" value="dimPerson" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=0;whiteSpace=wrap;fillColor=#E3E8EE;fontColor=#0B3C5D;strokeColor=#3F8FD2;swimlaneFillColor=#FFFFFF;fontSize=13;rounded=1;arcSize=4;" parent="1" vertex="1">
+          <mxGeometry x="790" y="461" width="330" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="per_f0" value="1 row per real person (shared)" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;fontStyle=2;fontColor=#0050EF;" parent="per" vertex="1">
+          <mxGeometry x="0" y="30" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="per_f1" value="PK personId" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;fontStyle=1;" parent="per" vertex="1">
+          <mxGeometry x="0" y="49" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="per_f2" value="status (active / retired)" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="per" vertex="1">
+          <mxGeometry x="0" y="68" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="per_f3" value="forwardedTo" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="per" vertex="1">
+          <mxGeometry x="0" y="87" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="per_f4" value="createdInLinkVersion" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="per" vertex="1">
+          <mxGeometry x="0" y="106" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="per_f5" value="retiredInLinkVersion" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="per" vertex="1">
+          <mxGeometry x="0" y="125" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="link" value="bridgePatientLinkHistory" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=0;whiteSpace=wrap;fillColor=#E3E8EE;fontColor=#0B3C5D;strokeColor=#3F8FD2;swimlaneFillColor=#FFFFFF;fontSize=13;rounded=1;arcSize=4;" parent="1" vertex="1">
+          <mxGeometry x="790" y="671" width="330" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="link_f0" value="shared, read from silver via shortcut" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;fontStyle=2;fontColor=#0050EF;" parent="link" vertex="1">
+          <mxGeometry x="0" y="30" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="link_f1" value="FK sourcePatientKey" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="link" vertex="1">
+          <mxGeometry x="0" y="49" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="link_f2" value="FK personId" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="link" vertex="1">
+          <mxGeometry x="0" y="68" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="link_f3" value="versionFrom, versionTo" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="link" vertex="1">
+          <mxGeometry x="0" y="87" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="src" value="dimPatientSource" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=0;whiteSpace=wrap;fillColor=#E3E8EE;fontColor=#0B3C5D;strokeColor=#3F8FD2;swimlaneFillColor=#FFFFFF;fontSize=13;rounded=1;arcSize=4;" parent="1" vertex="1">
+          <mxGeometry x="790" y="843" width="330" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="src_f0" value="shared: 1 row per record per system" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;fontStyle=2;fontColor=#0050EF;" parent="src" vertex="1">
+          <mxGeometry x="0" y="30" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="src_f1" value="PK sourcePatientKey" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;fontStyle=1;" parent="src" vertex="1">
+          <mxGeometry x="0" y="49" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="src_f2" value="sourceSystem (Epic, MEDITECH, LIS, pharmacy," style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="src" vertex="1">
+          <mxGeometry x="0" y="68" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="src_f3" value="  scheduling, claims, Medicare claims)" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="src" vertex="1">
+          <mxGeometry x="0" y="87" width="330" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="panel" value="bridgeCareManagerPanel" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=0;whiteSpace=wrap;fillColor=#7FB3E0;fontColor=#0B3C5D;strokeColor=#3F8FD2;swimlaneFillColor=#FFFFFF;fontSize=13;rounded=1;arcSize=4;" parent="1" vertex="1">
+          <mxGeometry x="1215" y="80" width="340" height="131" as="geometry" />
+        </mxCell>
+        <mxCell id="panel_f0" value="1 row per care manager × person × period" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;fontStyle=2;fontColor=#0050EF;" parent="panel" vertex="1">
+          <mxGeometry x="0" y="30" width="340" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="panel_f1" value="FK careManagerKey" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="panel" vertex="1">
+          <mxGeometry x="0" y="49" width="340" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="panel_f2" value="FK personId" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="panel" vertex="1">
+          <mxGeometry x="0" y="68" width="340" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="panel_f3" value="validFrom, validTo" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="panel" vertex="1">
+          <mxGeometry x="0" y="87" width="340" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="panel_f4" value="source (care management system)" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="panel" vertex="1">
+          <mxGeometry x="0" y="106" width="340" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="ev" value="factPatientEvent" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=0;whiteSpace=wrap;fillColor=#0050EF;fontColor=#FFFFFF;strokeColor=#3F8FD2;swimlaneFillColor=#FFFFFF;fontSize=13;rounded=1;arcSize=4;" parent="1" vertex="1">
+          <mxGeometry x="1215" y="237" width="340" height="321" as="geometry" />
+        </mxCell>
+        <mxCell id="ev_f0" value="1 row per visit, claim or appointment" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;fontStyle=2;fontColor=#0050EF;" parent="ev" vertex="1">
+          <mxGeometry x="0" y="30" width="340" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="ev_f1" value="PK eventKey" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;fontStyle=1;" parent="ev" vertex="1">
+          <mxGeometry x="0" y="49" width="340" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="ev_f2" value="FK personId, FK sourcePatientKey" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="ev" vertex="1">
+          <mxGeometry x="0" y="68" width="340" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="ev_f3" value="sourceSystem (Epic / MEDITECH / claims /" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="ev" vertex="1">
+          <mxGeometry x="0" y="87" width="340" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="ev_f4" value="  Medicare claims / scheduling)" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="ev" vertex="1">
+          <mxGeometry x="0" y="106" width="340" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="ev_f5" value="eventType (inpatient, ED, outpatient," style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="ev" vertex="1">
+          <mxGeometry x="0" y="125" width="340" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="ev_f6" value="  skilled nursing, home health, scheduled)" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="ev" vertex="1">
+          <mxGeometry x="0" y="144" width="340" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="ev_f7" value="FK locationKey (incl. outside facilities)" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="ev" vertex="1">
+          <mxGeometry x="0" y="163" width="340" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="ev_f8" value="FK practitionerKey, FK payerKey" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="ev" vertex="1">
+          <mxGeometry x="0" y="182" width="340" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="ev_f9" value="startDateTime, endDateTime" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="ev" vertex="1">
+          <mxGeometry x="0" y="201" width="340" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="ev_f10" value="principalDxCode, isSensitive" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="ev" vertex="1">
+          <mxGeometry x="0" y="220" width="340" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="ev_f11" value="isOwnFacility" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="ev" vertex="1">
+          <mxGeometry x="0" y="239" width="340" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="ev_f12" value="paidAmount (claims only)" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="ev" vertex="1">
+          <mxGeometry x="0" y="258" width="340" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="ev_f13" value="matchedEventKey (claim ↔ visit)" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="ev" vertex="1">
+          <mxGeometry x="0" y="277" width="340" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="ev_f14" value="linkVersion" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="ev" vertex="1">
+          <mxGeometry x="0" y="296" width="340" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="med" value="factMedicationAdherence" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=0;whiteSpace=wrap;fillColor=#0050EF;fontColor=#FFFFFF;strokeColor=#3F8FD2;swimlaneFillColor=#FFFFFF;fontSize=13;rounded=1;arcSize=4;" parent="1" vertex="1">
+          <mxGeometry x="1215" y="584" width="340" height="188" as="geometry" />
+        </mxCell>
+        <mxCell id="med_f0" value="1 row per person × drug class × period" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;fontStyle=2;fontColor=#0050EF;" parent="med" vertex="1">
+          <mxGeometry x="0" y="30" width="340" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="med_f1" value="FK personId" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="med" vertex="1">
+          <mxGeometry x="0" y="49" width="340" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="med_f2" value="drugClass (e.g. statins)" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="med" vertex="1">
+          <mxGeometry x="0" y="68" width="340" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="med_f3" value="periodStart, periodEnd" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="med" vertex="1">
+          <mxGeometry x="0" y="87" width="340" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="med_f4" value="proportionDaysCovered" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="med" vertex="1">
+          <mxGeometry x="0" y="106" width="340" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="med_f5" value="lastFillDate" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="med" vertex="1">
+          <mxGeometry x="0" y="125" width="340" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="med_f6" value="source (pharmacy / Medicare Part D)" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="med" vertex="1">
+          <mxGeometry x="0" y="144" width="340" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="med_f7" value="linkVersion" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="med" vertex="1">
+          <mxGeometry x="0" y="163" width="340" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="out" value="factOutreach" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=0;whiteSpace=wrap;fillColor=#0050EF;fontColor=#FFFFFF;strokeColor=#3F8FD2;swimlaneFillColor=#FFFFFF;fontSize=13;rounded=1;arcSize=4;" parent="1" vertex="1">
+          <mxGeometry x="1215" y="798" width="340" height="188" as="geometry" />
+        </mxCell>
+        <mxCell id="out_f0" value="1 row per outreach activity" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;fontStyle=2;fontColor=#0050EF;" parent="out" vertex="1">
+          <mxGeometry x="0" y="30" width="340" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="out_f1" value="PK outreachKey" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;fontStyle=1;" parent="out" vertex="1">
+          <mxGeometry x="0" y="49" width="340" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="out_f2" value="FK personId" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="out" vertex="1">
+          <mxGeometry x="0" y="68" width="340" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="out_f3" value="FK careManagerKey" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="out" vertex="1">
+          <mxGeometry x="0" y="87" width="340" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="out_f4" value="activityDateTime" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="out" vertex="1">
+          <mxGeometry x="0" y="106" width="340" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="out_f5" value="activityType (call, visit, letter)" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="out" vertex="1">
+          <mxGeometry x="0" y="125" width="340" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="out_f6" value="outcome" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="out" vertex="1">
+          <mxGeometry x="0" y="144" width="340" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="out_f7" value="FK careGapKey (optional)" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="out" vertex="1">
+          <mxGeometry x="0" y="163" width="340" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="cm" value="dimCareManager" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=0;whiteSpace=wrap;fillColor=#BEDCF5;fontColor=#0B3C5D;strokeColor=#3F8FD2;swimlaneFillColor=#FFFFFF;fontSize=13;rounded=1;arcSize=4;" parent="1" vertex="1">
+          <mxGeometry x="1615" y="80" width="300" height="93" as="geometry" />
+        </mxCell>
+        <mxCell id="cm_f0" value="PK careManagerKey" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;fontStyle=1;" parent="cm" vertex="1">
+          <mxGeometry x="0" y="30" width="300" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="cm_f1" value="name, team, role" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="cm" vertex="1">
+          <mxGeometry x="0" y="49" width="300" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="cm_f2" value="userPrincipalName (Entra ID)" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="cm" vertex="1">
+          <mxGeometry x="0" y="68" width="300" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="loc" value="dimLocation" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=0;whiteSpace=wrap;fillColor=#E3E8EE;fontColor=#0B3C5D;strokeColor=#3F8FD2;swimlaneFillColor=#FFFFFF;fontSize=13;rounded=1;arcSize=4;" parent="1" vertex="1">
+          <mxGeometry x="1615" y="277" width="300" height="93" as="geometry" />
+        </mxCell>
+        <mxCell id="loc_f0" value="PK locationKey" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;fontStyle=1;" parent="loc" vertex="1">
+          <mxGeometry x="0" y="30" width="300" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="loc_f1" value="facility, unit, type" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="loc" vertex="1">
+          <mxGeometry x="0" y="49" width="300" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="loc_f2" value="isOwnFacility" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="loc" vertex="1">
+          <mxGeometry x="0" y="68" width="300" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="prac" value="dimPractitioner" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=0;whiteSpace=wrap;fillColor=#E3E8EE;fontColor=#0B3C5D;strokeColor=#3F8FD2;swimlaneFillColor=#FFFFFF;fontSize=13;rounded=1;arcSize=4;" parent="1" vertex="1">
+          <mxGeometry x="1615" y="396" width="300" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="prac_f0" value="PK practitionerKey" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;fontStyle=1;" parent="prac" vertex="1">
+          <mxGeometry x="0" y="30" width="300" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="prac_f1" value="name, specialty" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="prac" vertex="1">
+          <mxGeometry x="0" y="49" width="300" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="prac_f2" value="nationalProviderId" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="prac" vertex="1">
+          <mxGeometry x="0" y="68" width="300" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="prac_f3" value="isAcoParticipant" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="prac" vertex="1">
+          <mxGeometry x="0" y="87" width="300" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="pay" value="dimPayer" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=0;whiteSpace=wrap;fillColor=#E3E8EE;fontColor=#0B3C5D;strokeColor=#3F8FD2;swimlaneFillColor=#FFFFFF;fontSize=13;rounded=1;arcSize=4;" parent="1" vertex="1">
+          <mxGeometry x="1615" y="534" width="300" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="pay_f0" value="PK payerKey" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;fontStyle=1;" parent="pay" vertex="1">
+          <mxGeometry x="0" y="30" width="300" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="pay_f1" value="payerName, payerType" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="pay" vertex="1">
+          <mxGeometry x="0" y="49" width="300" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="date" value="dimDateTime" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=0;whiteSpace=wrap;fillColor=#E3E8EE;fontColor=#0B3C5D;strokeColor=#3F8FD2;swimlaneFillColor=#FFFFFF;fontSize=13;rounded=1;arcSize=4;" parent="1" vertex="1">
+          <mxGeometry x="1615" y="634" width="300" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="date_f0" value="PK dateKey" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;fontStyle=1;" parent="date" vertex="1">
+          <mxGeometry x="0" y="30" width="300" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="date_f1" value="date, year, quarter, month" style="text;html=0;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" parent="date" vertex="1">
+          <mxGeometry x="0" y="49" width="300" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="e0" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;strokeColor=#2E6DA4;strokeWidth=1.5;fontSize=11;fontColor=#0B3C5D;endArrow=ERmany;startArrow=ERone;endFill=0;startFill=0;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="cg" target="cond">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="135" as="sourcePoint" />
+            <mxPoint x="375" y="135" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;strokeColor=#2E6DA4;strokeWidth=1.5;fontSize=11;fontColor=#0B3C5D;endArrow=ERmany;startArrow=ERone;endFill=0;startFill=0;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="di" target="ind">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="349" as="sourcePoint" />
+            <mxPoint x="375" y="349" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;strokeColor=#2E6DA4;strokeWidth=1.5;fontSize=11;fontColor=#0B3C5D;endArrow=ERmany;startArrow=ERone;endFill=0;startFill=0;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="rm" target="risk">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="563" as="sourcePoint" />
+            <mxPoint x="375" y="563" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;strokeColor=#2E6DA4;strokeWidth=1.5;fontSize=11;fontColor=#0B3C5D;endArrow=ERmany;startArrow=ERone;endFill=0;startFill=0;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="gm" target="gap">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="777" as="sourcePoint" />
+            <mxPoint x="375" y="777" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;strokeColor=#2E6DA4;strokeWidth=1.5;fontSize=11;fontColor=#0B3C5D;endArrow=ERmany;startArrow=ERone;endFill=0;startFill=0;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="ap" target="attr">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="1010" as="sourcePoint" />
+            <mxPoint x="375" y="1010" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;strokeColor=#2E6DA4;strokeWidth=1.5;fontSize=11;fontColor=#0B3C5D;endArrow=ERmany;startArrow=ERone;endFill=0;startFill=0;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="per" target="cond">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="790" y="503" as="sourcePoint" />
+            <mxPoint x="705" y="120" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="719" y="503" />
+              <mxPoint x="719" y="120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;strokeColor=#2E6DA4;strokeWidth=1.5;fontSize=11;fontColor=#0B3C5D;endArrow=ERmany;startArrow=ERone;endFill=0;startFill=0;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="per" target="ind">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="790" y="523" as="sourcePoint" />
+            <mxPoint x="705" y="334" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="733" y="523" />
+              <mxPoint x="733" y="334" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;strokeColor=#2E6DA4;strokeWidth=1.5;fontSize=11;fontColor=#0B3C5D;endArrow=ERmany;startArrow=ERone;endFill=0;startFill=0;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="per" target="risk">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="790" y="543" as="sourcePoint" />
+            <mxPoint x="705" y="548" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="747" y="543" />
+              <mxPoint x="747" y="548" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;strokeColor=#2E6DA4;strokeWidth=1.5;fontSize=11;fontColor=#0B3C5D;endArrow=ERmany;startArrow=ERone;endFill=0;startFill=0;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="per" target="gap">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="790" y="563" as="sourcePoint" />
+            <mxPoint x="705" y="762" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="761" y="563" />
+              <mxPoint x="761" y="762" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;strokeColor=#2E6DA4;strokeWidth=1.5;fontSize=11;fontColor=#0B3C5D;endArrow=ERmany;startArrow=ERone;endFill=0;startFill=0;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="per" target="attr">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="790" y="583" as="sourcePoint" />
+            <mxPoint x="705" y="995" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="775" y="583" />
+              <mxPoint x="775" y="995" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;strokeColor=#2E6DA4;strokeWidth=1.5;fontSize=11;fontColor=#0B3C5D;endArrow=ERmany;startArrow=ERone;endFill=0;startFill=0;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="per" target="panel">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1120" y="503" as="sourcePoint" />
+            <mxPoint x="1215" y="120" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1201" y="503" />
+              <mxPoint x="1201" y="120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;strokeColor=#2E6DA4;strokeWidth=1.5;fontSize=11;fontColor=#0B3C5D;endArrow=ERmany;startArrow=ERone;endFill=0;startFill=0;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="per" target="ev">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1120" y="523" as="sourcePoint" />
+            <mxPoint x="1215" y="277" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1187" y="523" />
+              <mxPoint x="1187" y="277" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;strokeColor=#2E6DA4;strokeWidth=1.5;fontSize=11;fontColor=#0B3C5D;endArrow=ERmany;startArrow=ERone;endFill=0;startFill=0;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="per" target="med">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1120" y="543" as="sourcePoint" />
+            <mxPoint x="1215" y="624" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1173" y="543" />
+              <mxPoint x="1173" y="624" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;strokeColor=#2E6DA4;strokeWidth=1.5;fontSize=11;fontColor=#0B3C5D;endArrow=ERmany;startArrow=ERone;endFill=0;startFill=0;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="per" target="out">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1120" y="563" as="sourcePoint" />
+            <mxPoint x="1215" y="838" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1159" y="563" />
+              <mxPoint x="1159" y="838" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;strokeColor=#2E6DA4;strokeWidth=1.5;fontSize=11;fontColor=#0B3C5D;endArrow=ERone;startArrow=ERone;endFill=0;startFill=0;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="per" target="sum">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="955" y="461" as="sourcePoint" />
+            <mxPoint x="955" y="401" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;strokeColor=#2E6DA4;strokeWidth=1.5;fontSize=11;fontColor=#0B3C5D;endArrow=ERmany;startArrow=ERone;endFill=0;startFill=0;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="per" target="link">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="955" y="611" as="sourcePoint" />
+            <mxPoint x="955" y="671" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;strokeColor=#2E6DA4;strokeWidth=1.5;fontSize=11;fontColor=#0B3C5D;endArrow=ERmany;startArrow=ERone;endFill=0;startFill=0;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="src" target="link">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="955" y="843" as="sourcePoint" />
+            <mxPoint x="955" y="783" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;strokeColor=#2E6DA4;strokeWidth=1.5;fontSize=11;fontColor=#0B3C5D;endArrow=ERmany;startArrow=ERone;endFill=0;startFill=0;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="cm" target="panel">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1615" y="125" as="sourcePoint" />
+            <mxPoint x="1555" y="125" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;strokeColor=#2E6DA4;strokeWidth=1.5;fontSize=11;fontColor=#0B3C5D;endArrow=ERmany;startArrow=ERone;endFill=0;startFill=0;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="cm" target="out">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1915" y="125" as="sourcePoint" />
+            <mxPoint x="1555" y="868" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1940" y="125" />
+              <mxPoint x="1940" y="868" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;strokeColor=#2E6DA4;strokeWidth=1.5;fontSize=11;fontColor=#0B3C5D;endArrow=ERmany;startArrow=ERone;endFill=0;startFill=0;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="loc" target="ev">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1615" y="322" as="sourcePoint" />
+            <mxPoint x="1555" y="322" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;strokeColor=#2E6DA4;strokeWidth=1.5;fontSize=11;fontColor=#0B3C5D;endArrow=ERmany;startArrow=ERone;endFill=0;startFill=0;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="prac" target="ev">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1615" y="441" as="sourcePoint" />
+            <mxPoint x="1555" y="441" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;strokeColor=#2E6DA4;strokeWidth=1.5;fontSize=11;fontColor=#0B3C5D;endArrow=ERmany;startArrow=ERone;endFill=0;startFill=0;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="pay" target="ev">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1615" y="574" as="sourcePoint" />
+            <mxPoint x="1555" y="574" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e22" value="rebuilt nightly" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;strokeColor=#0050EF;strokeWidth=1.5;fontSize=11;fontColor=#0B3C5D;dashed=1;endArrow=block;endFill=1;startArrow=none;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="ev" target="sum">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1215" y="287" as="sourcePoint" />
+            <mxPoint x="1120" y="287" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lg0" value="Person-level fact" style="rounded=1;html=0;fillColor=#0050EF;fontColor=#FFFFFF;strokeColor=#3F8FD2;fontSize=11;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="1203" width="205" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="lg1" value="Wide summary (worklist)" style="rounded=1;html=0;fillColor=#0B3C5D;fontColor=#FFFFFF;strokeColor=#3F8FD2;fontSize=11;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="255" y="1203" width="205" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="lg2" value="Dimension" style="rounded=1;html=0;fillColor=#BEDCF5;fontColor=#0B3C5D;strokeColor=#3F8FD2;fontSize=11;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="470" y="1203" width="205" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="lg3" value="Bridge (row-level security)" style="rounded=1;html=0;fillColor=#7FB3E0;fontColor=#0B3C5D;strokeColor=#3F8FD2;fontSize=11;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="685" y="1203" width="205" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="lg4" value="Shared with quality model" style="rounded=1;html=0;fillColor=#E3E8EE;fontColor=#0B3C5D;strokeColor=#3F8FD2;fontSize=11;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="900" y="1203" width="205" height="28" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

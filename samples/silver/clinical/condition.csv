@@ -1,0 +1,123 @@
+encounterId,icd10Code,display,diagnosisRole
+VIS-3001,A41.9,Sepsis,principal
+VIS-3001,I10,High blood pressure,secondary
+VIS-3002,A41.9,Sepsis,principal
+VIS-3002,N18.3,Chronic kidney disease stage 3,secondary
+VIS-3003,J96.01,Acute respiratory failure,principal
+VIS-3004,I21.4,Heart attack (NSTEMI),principal
+VIS-3005,A41.9,Sepsis,principal
+VIS-3006,A41.9,Sepsis,principal
+VIS-3007,A41.9,Sepsis,principal
+VIS-3007,E11.9,Type 2 diabetes,secondary
+VIS-3008,A41.9,Sepsis,principal
+VIS-3009,A41.9,Sepsis,principal
+VIS-3010,A41.9,Sepsis,principal
+VIS-3011,A41.9,Sepsis,principal
+VIS-3012,I50.9,Heart failure,principal
+VIS-3013,A41.9,Sepsis,principal
+VIS-3014,A41.9,Sepsis,principal
+VIS-3015,A41.9,Sepsis,principal
+VIS-3016,J18.9,Pneumonia,principal
+VIS-3017,K57.92,Diverticulitis,principal
+VIS-3018,K57.92,Diverticulitis,principal
+VIS-3019,E11.65,Type 2 diabetes with high glucose,principal
+VIS-3020,J18.9,Pneumonia,principal
+VIS-3021,J18.9,Pneumonia,principal
+VIS-3022,N17.9,Acute kidney failure,principal
+VIS-3023,I50.9,Heart failure,principal
+VIS-3024,J18.9,Pneumonia,principal
+VIS-3024,J96.01,Acute respiratory failure,secondary
+VIS-3025,I50.9,Heart failure,principal
+VIS-3025,E11.9,Type 2 diabetes,secondary
+VIS-3026,E11.65,Type 2 diabetes with high glucose,principal
+VIS-3026,E78.5,High cholesterol,secondary
+VIS-3027,I50.9,Heart failure,principal
+VIS-3027,I10,High blood pressure,secondary
+VIS-3028,N17.9,Acute kidney failure,principal
+VIS-3028,E11.9,Type 2 diabetes,secondary
+VIS-3029,J44.1,COPD with exacerbation,principal
+VIS-3029,N18.3,Chronic kidney disease stage 3,secondary
+VIS-3030,N17.9,Acute kidney failure,principal
+VIS-3030,I10,High blood pressure,secondary
+VIS-3031,J18.9,Pneumonia,principal
+VIS-3031,Z79.4,Long-term insulin use,secondary
+VIS-3032,J44.1,COPD with exacerbation,principal
+VIS-3032,J96.01,Acute respiratory failure,secondary
+VIS-3033,K57.92,Diverticulitis,principal
+VIS-3033,I10,High blood pressure,secondary
+VIS-3034,K57.92,Diverticulitis,principal
+VIS-3034,I10,High blood pressure,secondary
+VIS-3035,I50.9,Heart failure,principal
+VIS-3035,J96.01,Acute respiratory failure,secondary
+VIS-3036,N17.9,Acute kidney failure,principal
+VIS-3036,N18.3,Chronic kidney disease stage 3,secondary
+VIS-3037,N39.0,Urinary tract infection,principal
+VIS-3037,N18.3,Chronic kidney disease stage 3,secondary
+VIS-3038,I21.4,Heart attack (NSTEMI),principal
+VIS-3038,E78.5,High cholesterol,secondary
+VIS-3039,I50.9,Heart failure,principal
+VIS-3039,N18.3,Chronic kidney disease stage 3,secondary
+VIS-3040,K57.92,Diverticulitis,principal
+VIS-3040,E78.5,High cholesterol,secondary
+VIS-3041,N17.9,Acute kidney failure,principal
+VIS-3041,E78.5,High cholesterol,secondary
+VIS-3042,J44.1,COPD with exacerbation,principal
+VIS-3042,N18.3,Chronic kidney disease stage 3,secondary
+VIS-3043,N39.0,Urinary tract infection,principal
+VIS-3043,N18.3,Chronic kidney disease stage 3,secondary
+VIS-3044,I21.4,Heart attack (NSTEMI),principal
+VIS-3044,I10,High blood pressure,secondary
+VIS-3045,J18.9,Pneumonia,principal
+VIS-3045,N18.3,Chronic kidney disease stage 3,secondary
+VIS-3046,E11.65,Type 2 diabetes with high glucose,principal
+VIS-3046,Z79.4,Long-term insulin use,secondary
+VIS-3047,I50.9,Heart failure,principal
+VIS-3047,Z79.4,Long-term insulin use,secondary
+VIS-3048,K57.92,Diverticulitis,principal
+VIS-3048,J96.01,Acute respiratory failure,secondary
+VIS-3049,I21.4,Heart attack (NSTEMI),principal
+VIS-3049,Z79.4,Long-term insulin use,secondary
+VIS-3050,R51.9,Headache,principal
+VIS-3051,M54.5,Low back pain,principal
+VIS-3052,M54.5,Low back pain,principal
+VIS-3053,S93.401A,Ankle sprain,principal
+VIS-3054,M54.5,Low back pain,principal
+VIS-3055,R10.9,Abdominal pain,principal
+VIS-3056,J06.9,Upper respiratory infection,principal
+VIS-3057,S93.401A,Ankle sprain,principal
+VIS-3058,R51.9,Headache,principal
+VIS-3059,J06.9,Upper respiratory infection,principal
+VIS-3060,R07.9,Chest pain,principal
+VIS-3061,R10.9,Abdominal pain,principal
+VIS-3062,R07.9,Chest pain,principal
+VIS-3063,J06.9,Upper respiratory infection,principal
+VIS-3064,R10.9,Abdominal pain,principal
+VIS-3065,S61.411A,Hand laceration,principal
+VIS-3066,S93.401A,Ankle sprain,principal
+VIS-3067,F41.1,Anxiety disorder,principal
+VIS-3068,S93.401A,Ankle sprain,principal
+VIS-3069,R51.9,Headache,principal
+VIS-3070,R51.9,Headache,principal
+VIS-3071,R07.9,Chest pain,principal
+VIS-3072,S61.411A,Hand laceration,principal
+VIS-3073,M54.5,Low back pain,principal
+VIS-3074,J06.9,Upper respiratory infection,principal
+VIS-3075,F32.9,Depression,principal
+VIS-3076,M54.5,Low back pain,principal
+VIS-3077,R51.9,Headache,principal
+VIS-3078,R51.9,Headache,principal
+VIS-3079,R51.9,Headache,principal
+VIS-3080,R07.9,Chest pain,principal
+VIS-3081,M54.5,Low back pain,principal
+VIS-3082,R51.9,Headache,principal
+VIS-3083,S61.411A,Hand laceration,principal
+VIS-3084,R07.9,Chest pain,principal
+VIS-3085,R07.9,Chest pain,principal
+VIS-3086,M54.5,Low back pain,principal
+VIS-3087,M54.5,Low back pain,principal
+VIS-3088,S93.401A,Ankle sprain,principal
+VIS-3089,R10.9,Abdominal pain,principal
+VIS-3090,R10.9,Abdominal pain,principal
+VIS-3091,R10.9,Abdominal pain,principal
+VIS-3092,R07.9,Chest pain,principal
+VIS-3093,R07.9,Chest pain,principal

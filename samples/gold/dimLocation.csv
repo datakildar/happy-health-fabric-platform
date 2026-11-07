@@ -1,0 +1,35 @@
+locationKey,hospital,unit,unitType,sourceSystem
+H01-ED,Happy North Hospital,Emergency Department,ED,Epic
+H01-IP,Happy North Hospital,Medical-Surgical Unit,Inpatient,Epic
+H02-ED,Happy Central Hospital,Emergency Department,ED,Epic
+H02-IP,Happy Central Hospital,Medical-Surgical Unit,Inpatient,Epic
+H03-ED,Happy East Hospital,Emergency Department,ED,Epic
+H03-IP,Happy East Hospital,Medical-Surgical Unit,Inpatient,Epic
+H04-ED,Happy West Hospital,Emergency Department,ED,Epic
+H04-IP,Happy West Hospital,Medical-Surgical Unit,Inpatient,Epic
+H05-ED,Happy Valley Hospital,Emergency Department,ED,Epic
+H05-IP,Happy Valley Hospital,Medical-Surgical Unit,Inpatient,Epic
+H06-ED,Happy Hills Hospital,Emergency Department,ED,Epic
+H06-IP,Happy Hills Hospital,Medical-Surgical Unit,Inpatient,Epic
+H07-ED,Happy Harbor Hospital,Emergency Department,ED,Epic
+H07-IP,Happy Harbor Hospital,Medical-Surgical Unit,Inpatient,Epic
+H08-ED,Happy Summit Hospital,Emergency Department,ED,Epic
+H08-IP,Happy Summit Hospital,Medical-Surgical Unit,Inpatient,Epic
+H09-ED,Happy Bay Hospital,Emergency Department,ED,Epic
+H09-IP,Happy Bay Hospital,Medical-Surgical Unit,Inpatient,Epic
+H10-ED,Happy Pines Hospital,Emergency Department,ED,Epic
+H10-IP,Happy Pines Hospital,Medical-Surgical Unit,Inpatient,Epic
+H11-ED,Happy Meadow Hospital,Emergency Department,ED,Epic
+H11-IP,Happy Meadow Hospital,Medical-Surgical Unit,Inpatient,Epic
+H12-ED,Happy Ridge Hospital,Emergency Department,ED,Epic
+H12-IP,Happy Ridge Hospital,Medical-Surgical Unit,Inpatient,Epic
+H13-ED,Riverside Hospital,Emergency Department,ED,MEDITECH
+H13-IP,Riverside Hospital,Medical-Surgical Unit,Inpatient,MEDITECH
+H14-ED,Lakeside Hospital,Emergency Department,ED,MEDITECH
+H14-IP,Lakeside Hospital,Medical-Surgical Unit,Inpatient,MEDITECH
+H15-ED,Brookside Hospital,Emergency Department,ED,MEDITECH
+H15-IP,Brookside Hospital,Medical-Surgical Unit,Inpatient,MEDITECH
+H16-ED,Fairview Hospital,Emergency Department,ED,MEDITECH
+H16-IP,Fairview Hospital,Medical-Surgical Unit,Inpatient,MEDITECH
+H17-ED,Oakwood Hospital,Emergency Department,ED,MEDITECH
+H17-IP,Oakwood Hospital,Medical-Surgical Unit,Inpatient,MEDITECH

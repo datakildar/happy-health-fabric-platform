@@ -1,0 +1,6 @@
+measureKey,measureId,measureName,program,specVersion,scoringType,aggregationMethod,resultUnit,strata,effectiveFrom,effectiveTo
+M1,READM-30,"30-day all-cause readmission (internal, CMS method)",CMS Hospital Readmissions Reduction Program (internal tracking),2026.1,Proportion,Rate = numerator ÷ denominator,percent,All,2026-01-01,2026-12-31
+M2,SEP-1,Severe sepsis / septic shock management bundle,CMS Hospital Inpatient Quality Reporting,2026.1,Proportion,Rate = numerator ÷ denominator,percent,All,2026-01-01,2026-12-31
+M3,ED-T2P,ED arrival to provider (minutes),Internal (former CMS OP-20),2026.1,Continuous variable,Median of observationValue,minutes,All,2026-01-01,2026-12-31
+M4,OP-18,"Median time ED arrival to departure, discharged patients",CMS Hospital Outpatient Quality Reporting,2026.1,Continuous variable,Median of observationValue,minutes,Main (OP-18b); Mental health (OP-18c),2026-01-01,2027-12-31
+M5,OP-22,Left without being seen (share of ED visits),CMS Hospital Outpatient Quality Reporting,2026.1,Proportion,Rate = numerator ÷ denominator,percent,All,2026-01-01,2027-12-31

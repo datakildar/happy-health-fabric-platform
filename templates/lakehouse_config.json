@@ -1,0 +1,35 @@
+{
+  "_comment": "Happy Health lakehouse layout. One set per environment (dev, uat, prod); names are identical across environments so deployment pipelines only change the workspace.",
+  "version": "1.0",
+  "workspaces": {
+    "engineering": "happy-engineering-{env}",
+    "quality": "happy-quality-{env}",
+    "populationHealth": "happy-pophealth-{env}",
+    "research": "happy-research-{env}",
+    "monitoring": "happy-monitoring-{env}",
+    "reports": "happy-reports-{env}"
+  },
+  "lakehouses": {
+    "lh_bronze":           {"workspace": "engineering", "purpose": "Raw source data exactly as received (FHIR NDJSON, HL7v2 files, mirrored tables)", "writeMode": "append only", "retention": "7 years (confirm with records policy)", "label": "Highly Confidential - PHI"},
+    "lh_silver":           {"workspace": "engineering", "purpose": "FHIR-shaped, cleaned, coded clinical tables (Healthcare Data Solutions + Happy Health tables)", "writeMode": "merge on business key", "label": "Highly Confidential - PHI"},
+    "lh_silver_identity":  {"workspace": "engineering", "purpose": "Patient matching outputs: dimPatientSource, dimPerson, bridgePatientLinkHistory, linkVersion, review queue", "writeMode": "append + close rows, never delete", "label": "Highly Confidential - PHI"},
+    "lh_mdm":              {"workspace": "engineering", "purpose": "Settings exported from Profisee: matching thresholds and weights, measure parameters, provider and location masters", "writeMode": "versioned", "label": "Confidential"},
+    "lh_gold_quality":     {"workspace": "quality", "purpose": "Quality star schema, calculation runs, measure results", "writeMode": "rebuild facts; append runs (frozen once submitted)", "shortcuts": ["lh_silver_identity"], "label": "Highly Confidential - PHI"},
+    "lh_gold_pophealth":   {"workspace": "populationHealth", "purpose": "Patient 360 mart for the ACO (after day 120)", "writeMode": "full nightly rebuild", "shortcuts": ["lh_silver_identity"], "label": "Highly Confidential - PHI"},
+    "lh_research":         {"workspace": "research", "purpose": "Released de-identified extracts only", "writeMode": "release pipeline only", "label": "De-identified"},
+    "lh_restricted":       {"workspace": "research", "purpose": "Study ID crosswalks; never shared", "writeMode": "release pipeline only", "label": "Highly Confidential - PHI"},
+    "lh_monitoring":       {"workspace": "monitoring", "purpose": "notebookRunLog, notebookErrorLog, conversionErrorLog; source for the audit model", "writeMode": "append", "label": "Confidential"}
+  },
+  "systemColumns": {
+    "bronze": ["_sourceSystem", "_fileName", "_loadTimestamp", "_batchId"],
+    "silver": ["_sourceSystem", "_loadTimestamp", "_batchId"],
+    "gold": ["_pipelineRunId", "_lastUpdated"]
+  },
+  "deltaMaintenance": {"optimize": "weekly, Sunday 02:00, with V-Order", "vacuumRetainHours": 720, "notes": "Bronze is never vacuumed below its retention period"},
+  "capacity": {
+    "prod": {"sku": "F64", "billing": "1-year reservation after 1-2 months pay-as-you-go", "sparkAutoscaleBilling": {"enabled": true, "maxCU": 128}},
+    "uat": {"sku": "F32", "billing": "pay-as-you-go, paused outside test windows", "note": "raise to F64 for the parallel run (weeks 9-11)"},
+    "dev": {"sku": "F8", "billing": "pay-as-you-go, paused nights and weekends", "data": "synthetic only"}
+  },
+  "pipelineDefaults": {"retryCount": 2, "retryIntervalSeconds": 120, "timeoutMinutes": 180, "onFailure": "Teams alert to the data on-call channel", "concurrency": 1}
+}

@@ -1,0 +1,6 @@
+matchingRunId,mdmSettingsVersion,recordA,recordB,gammaFirstName,gammaLastName,gammaBirthDate,gammaSex,gammaZip,gammaPhone,matchWeight,matchProbability,outcome,linkVersion
+MR-20260501,MDM-1,EPIC-10015,MEDI-88015,exact,exact,exact,exact,exact,exact,,1.00,Linked by exact rule,1
+MR-20260501,MDM-1,EPIC-10012,MEDI-88012,exact,one letter apart,one year apart,exact,different,exact,5.0,0.97,Auto-linked (>= 0.95),1
+MR-20260501,MDM-1,EPIC-10005,MEDI-88005,exact (common name),exact (common name),missing,exact,exact,different,-2.9,0.12,Kept separate (< 0.50),1
+MR-20260929,MDM-2,EPIC-10005,MEDI-88005,exact (common name),exact (common name),exact,exact,exact,different,2.1,0.81,Review queue (0.50-0.95),7
+MR-20261014,MDM-3,EPIC-10012,MEDI-88012,exact,one letter apart,one year apart,exact,different,exact,-0.7,0.38,Steward confirmed split,8

@@ -1,0 +1,17 @@
+practitionerKey,name,specialty,nationalProviderId
+PR01,Dr. L. Gonzales,Emergency Medicine,1000000001
+PR02,Dr. J. White,Emergency Medicine,1000000002
+PR03,Dr. L. Wright,Emergency Medicine,1000000003
+PR04,Dr. D. Jones,Emergency Medicine,1000000004
+PR05,Dr. M. Taylor,Emergency Medicine,1000000005
+PR06,Dr. R. Ramirez,Emergency Medicine,1000000006
+PR07,Dr. E. Hill,Hospital Medicine,1000000007
+PR08,Dr. T. Rodriguez,Hospital Medicine,1000000008
+PR09,Dr. B. Lee,Hospital Medicine,1000000009
+PR10,Dr. S. Young,Hospital Medicine,1000000010
+PR11,Dr. E. Johnson,Hospital Medicine,1000000011
+PR12,Dr. J. Wilson,Hospital Medicine,1000000012
+PR13,Dr. B. Harris,Cardiology,1000000013
+PR14,Dr. C. Scott,Pulmonology,1000000014
+PR15,Dr. S. Garcia,Infectious Disease,1000000015
+PR16,Dr. P. Moore,Oncology,1000000016

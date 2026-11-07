@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "happy-platform"
+version = "1.4.0"
+description = "Reference rules for the Happy Health data platform on Microsoft Fabric: FHIR and HL7v2 mapping, versioned patient links, CMS measures, Safe Harbor de-identification, logging standard."
+authors = [{ name = "Ruben Sanchez" }]
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = ["pandas>=2.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

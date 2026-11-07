@@ -1,0 +1,6 @@
+payerKey,payerName,payerType
+PY1,Medicare (traditional),Medicare FFS
+PY2,Medicare Advantage plan,Medicare Advantage
+PY3,State Medicaid,Medicaid
+PY4,Commercial insurance,Commercial
+PY5,No insurance,Self-pay
